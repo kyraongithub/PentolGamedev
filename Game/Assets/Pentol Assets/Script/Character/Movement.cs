@@ -1,56 +1,59 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
     public Transform player;
+    public FixedJoystick fixedJoystick;
     private Rigidbody2D rb;
-    public float speed = 10.0f;
+    public float speed = 5.0f;
     public float jumpSpeed = 10.0f;
+    public Button btnJump;
     public Animator animator;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator.SetBool("jump", true);
     }
     void Update()
     {   // player move
-        player.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime,0f,0f);
-
-        // flip character
+        // using arrow / wasd
+        player.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, 0f);
         Vector3 characterScale = transform.localScale;
-        if (Input.GetAxis("Horizontal") < 0)
+        // using joystick
+        if (fixedJoystick.Horizontal > 0)
         {
-            characterScale.x = -2;
+            player.transform.Translate(Vector2.right * speed * Time.deltaTime);
+            characterScale.x = 5;
+            animator.SetBool("walk", true);
+            animator.SetBool("jump", false);
         }
-        if (Input.GetAxis("Horizontal") > 0)
+        else if(fixedJoystick.Horizontal < 0)
         {
-            characterScale.x = 2;
+            player.transform.Translate(Vector2.left * speed * Time.deltaTime);
+            characterScale.x = -5;
+            animator.SetBool("walk", true);
+            animator.SetBool("jump", false);
         }
-        transform.localScale = characterScale;
-
-        // move animation
-        // walk
-        if(Input.GetAxis("Horizontal") == 0)
+        else
         {
             animator.SetBool("walk", false);
         }
-        if (Input.GetAxis("Horizontal") != 0)
-        {
-            animator.SetBool("walk", true);
-        }
+        // flip character
+        transform.localScale = characterScale;
+
         //jump
-        //if (rb.velocity.y > 0)
-        //{
-            //animator.SetBool("walk", false);
-            //animator.SetBool("jump", true);
-        //}
-        //if (rb.velocity.y == 0)
-        //{
-            //animator.SetBool("jump", false);
-        //}
+        Button btn = btnJump.GetComponent<Button>();
+        btn.onClick.AddListener(jumpButton);
+        if (rb.velocity.y == 0)
+        {
+            animator.SetBool("jump", false);
+        }
     }
     public void jumpButton()
     {
-        rb.velocity = Vector2.up * jumpSpeed;  
+        rb.velocity = Vector2.up * jumpSpeed;
+        animator.SetBool("jump", true);
     }
     
 }
