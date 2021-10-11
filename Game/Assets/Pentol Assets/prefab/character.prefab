@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6368481814473374862
+--- !u!1 &7541931113395033246
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6368481814473374896}
-  - component: {fileID: 6368481814473374863}
-  - component: {fileID: 6368481814473374898}
-  - component: {fileID: 6368481814473374897}
+  - component: {fileID: 7541931113469145552}
+  - component: {fileID: 7541931113395033243}
+  - component: {fileID: 7541931113395033242}
+  - component: {fileID: 7541931113395033241}
+  - component: {fileID: 7541931113395033240}
+  - component: {fileID: 7541931113395033247}
   m_Layer: 0
   m_Name: character
   m_TagString: Untagged
@@ -19,27 +21,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6368481814473374896
+--- !u!4 &7541931113469145552
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6368481814473374862}
+  m_GameObject: {fileID: 7541931113395033246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.67, y: 3.3, z: -9.925781}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.1, y: 11.44, z: -4}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6368481814473374863
+--- !u!212 &7541931113395033243
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6368481814473374862}
+  m_GameObject: {fileID: 7541931113395033246}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -81,14 +83,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &6368481814473374898
+--- !u!50 &7541931113395033242
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6368481814473374862}
+  m_GameObject: {fileID: 7541931113395033246}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -102,13 +104,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &6368481814473374897
+--- !u!61 &7541931113395033241
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6368481814473374862}
+  m_GameObject: {fileID: 7541931113395033246}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -128,3 +130,40 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2435944, y: 1.5250505}
   m_EdgeRadius: 0
+--- !u!95 &7541931113395033240
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541931113395033246}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 346c3c8e56d8bb94db1ce624677c4415, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7541931113395033247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7541931113395033246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d84eaf4e82026488d52d3998d5f155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7541931113469145552}
+  fixedJoystick: {fileID: 0}
+  speed: 5
+  jumpSpeed: 5
+  btnJump: {fileID: 0}
+  animator: {fileID: 7541931113395033240}

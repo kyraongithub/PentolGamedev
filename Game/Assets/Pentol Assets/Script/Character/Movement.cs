@@ -24,14 +24,14 @@ public class Movement : MonoBehaviour
         if (fixedJoystick.Horizontal > 0)
         {
             player.transform.Translate(Vector2.right * speed * Time.deltaTime);
-            characterScale.x = 5;
+            characterScale.x = 2;
             animator.SetBool("walk", true);
             animator.SetBool("jump", false);
         }
         else if(fixedJoystick.Horizontal < 0)
         {
             player.transform.Translate(Vector2.left * speed * Time.deltaTime);
-            characterScale.x = -5;
+            characterScale.x = -2;
             animator.SetBool("walk", true);
             animator.SetBool("jump", false);
         }
