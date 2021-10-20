@@ -6891,7 +6891,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &1838472464
 Animator:
   serializedVersion: 3
@@ -6986,7 +6986,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 190343568}
-  agroRange: 10
   moveSpeed: 10
   animator: {fileID: 1838472464}
 --- !u!1 &1978318477
