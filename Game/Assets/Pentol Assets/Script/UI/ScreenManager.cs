@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ScreenManager : MonoBehaviour
 {
-    public Canvas setting;
-    public bool showSetting = false;
+    private Canvas setting;
+    private bool showSetting = false;
   public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
