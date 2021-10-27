@@ -51,6 +51,14 @@ public class Movement : MonoBehaviour
             animator.SetBool("jump", false);
         }
     }
+
+    //coin collect
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Coins"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
     public void jumpButton()
     {
         rb.velocity = Vector2.up * jumpSpeed;
