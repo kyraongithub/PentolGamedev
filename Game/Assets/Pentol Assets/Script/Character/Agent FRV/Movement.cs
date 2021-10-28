@@ -52,13 +52,27 @@ public class Movement : MonoBehaviour
         }
     }
 
-    //coin collect
+    //coin,boots,energy,health collect
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Coins"))
         {
             Destroy(other.gameObject);
         }
+         if (other.gameObject.CompareTag("Boots"))
+        {
+            Destroy(other.gameObject);
+        }
+         if (other.gameObject.CompareTag("Energy"))
+        {
+            Destroy(other.gameObject);
+        }
+         if (other.gameObject.CompareTag("Health"))
+        {
+            Destroy(other.gameObject);
+        }
     }
+
+
     public void jumpButton()
     {
         rb.velocity = Vector2.up * jumpSpeed;

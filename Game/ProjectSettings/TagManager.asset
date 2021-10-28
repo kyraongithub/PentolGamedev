@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coins
+  - Boots
+  - Energy
+  - Health
   layers:
   - Default
   - TransparentFX
