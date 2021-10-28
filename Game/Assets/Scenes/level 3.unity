@@ -6542,6 +6542,7 @@ GameObject:
   - component: {fileID: 579460473}
   - component: {fileID: 579460474}
   - component: {fileID: 579460475}
+  - component: {fileID: 579460476}
   m_Layer: 0
   m_Name: coin (2)
   m_TagString: Coins
@@ -6627,6 +6628,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.64
+--- !u!114 &579460476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 579460472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc03d4bc3fa706478f2afb7566c9fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &601236587
 GameObject:
   m_ObjectHideFlags: 0
@@ -6638,6 +6652,7 @@ GameObject:
   - component: {fileID: 601236588}
   - component: {fileID: 601236589}
   - component: {fileID: 601236590}
+  - component: {fileID: 601236591}
   m_Layer: 0
   m_Name: energy
   m_TagString: Energy
@@ -6723,6 +6738,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.64
+--- !u!114 &601236591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601236587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc03d4bc3fa706478f2afb7566c9fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &708688852
 GameObject:
   m_ObjectHideFlags: 0
@@ -6734,6 +6762,7 @@ GameObject:
   - component: {fileID: 708688853}
   - component: {fileID: 708688854}
   - component: {fileID: 708688855}
+  - component: {fileID: 708688856}
   m_Layer: 0
   m_Name: heart (1)
   m_TagString: Health
@@ -6819,6 +6848,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.64
+--- !u!114 &708688856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708688852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc03d4bc3fa706478f2afb7566c9fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &894381177
 GameObject:
   m_ObjectHideFlags: 0
@@ -6830,6 +6872,7 @@ GameObject:
   - component: {fileID: 894381178}
   - component: {fileID: 894381179}
   - component: {fileID: 894381180}
+  - component: {fileID: 894381181}
   m_Layer: 0
   m_Name: coin (3)
   m_TagString: Coins
@@ -6915,6 +6958,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.64
+--- !u!114 &894381181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894381177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc03d4bc3fa706478f2afb7566c9fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &973502221
 GameObject:
   m_ObjectHideFlags: 0
@@ -6926,6 +6982,7 @@ GameObject:
   - component: {fileID: 973502222}
   - component: {fileID: 973502223}
   - component: {fileID: 973502224}
+  - component: {fileID: 973502225}
   m_Layer: 0
   m_Name: boots
   m_TagString: Boots
@@ -7011,6 +7068,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.64
+--- !u!114 &973502225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973502221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc03d4bc3fa706478f2afb7566c9fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1007456766
 GameObject:
   m_ObjectHideFlags: 0
@@ -7022,6 +7092,7 @@ GameObject:
   - component: {fileID: 1007456767}
   - component: {fileID: 1007456768}
   - component: {fileID: 1007456769}
+  - component: {fileID: 1007456770}
   m_Layer: 0
   m_Name: coin
   m_TagString: Coins
@@ -7107,6 +7178,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.64
+--- !u!114 &1007456770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007456766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc03d4bc3fa706478f2afb7566c9fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1016259869
 GameObject:
   m_ObjectHideFlags: 0
@@ -7300,6 +7384,7 @@ GameObject:
   - component: {fileID: 1545730324}
   - component: {fileID: 1545730325}
   - component: {fileID: 1545730326}
+  - component: {fileID: 1545730327}
   m_Layer: 0
   m_Name: heart
   m_TagString: Health
@@ -7385,6 +7470,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.64
+--- !u!114 &1545730327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545730323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc03d4bc3fa706478f2afb7566c9fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1571263597
 GameObject:
   m_ObjectHideFlags: 0
@@ -7515,6 +7613,7 @@ GameObject:
   - component: {fileID: 1744927344}
   - component: {fileID: 1744927345}
   - component: {fileID: 1744927346}
+  - component: {fileID: 1744927347}
   m_Layer: 0
   m_Name: coin (1)
   m_TagString: Coins
@@ -7600,6 +7699,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.64
+--- !u!114 &1744927347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744927343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc03d4bc3fa706478f2afb7566c9fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &1978318477
 GameObject:
   m_ObjectHideFlags: 0
