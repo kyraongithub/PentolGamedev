@@ -6,10 +6,10 @@ public class Movement : MonoBehaviour
     public Transform player;
     public FixedJoystick fixedJoystick;
     public Rigidbody2D rb;
-    public float speed = 5.0f;
+    public float speed = 10.0f;
     public float jumpSpeed = 10.0f;
-    public Button btnJump;
     public Animator animator;
+    public int jumpCount = 0;
 
     void Start()
     {
@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
             animator.SetBool("walk", true);
             animator.SetBool("jump", false);
         }
-        else if(fixedJoystick.Horizontal < 0 || Input.GetAxis("Horizontal") < 0)
+        else if (fixedJoystick.Horizontal < 0 || Input.GetAxis("Horizontal") < 0)
         {
             player.transform.Translate(Vector2.left * speed * Time.deltaTime);
             characterScale.x = -2;
@@ -42,41 +42,44 @@ public class Movement : MonoBehaviour
         }
         // flip character
         transform.localScale = characterScale;
-
-        //jump
-        Button btn = btnJump.GetComponent<Button>();
-        btn.onClick.AddListener(jumpButton);
         if (rb.velocity.y == 0)
         {
             animator.SetBool("jump", false);
+            jumpCount = 0;
+
         }
     }
-
-    //coin,boots,energy,health collect
-    private void OnTriggerEnter2D(Collider2D other) {
+        //coin,boots,energy,health collect
+        private void OnTriggerEnter2D(Collider2D other)
+    {
         if (other.gameObject.CompareTag("Coins"))
         {
             Destroy(other.gameObject);
         }
-         if (other.gameObject.CompareTag("Boots"))
+        if (other.gameObject.CompareTag("Boots"))
         {
             Destroy(other.gameObject);
         }
-         if (other.gameObject.CompareTag("Energy"))
+        if (other.gameObject.CompareTag("Energy"))
         {
             Destroy(other.gameObject);
         }
-         if (other.gameObject.CompareTag("Health"))
+        if (other.gameObject.CompareTag("Health"))
         {
             Destroy(other.gameObject);
         }
     }
 
 
-    public void jumpButton()
+    public void JumpButton()
     {
-        rb.velocity = Vector2.up * jumpSpeed;
-        animator.SetBool("jump", true);
+        if (jumpCount < 2)
+        {
+
+            rb.velocity = Vector2.up * jumpSpeed;
+            animator.SetBool("jump", true);
+            jumpCount++;
+        }
     }
-    
+
 }

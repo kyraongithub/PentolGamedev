@@ -25099,6 +25099,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7541931113395033242, guid: 57d70446c8667aa4f8cef4692ca3412f,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7541931113395033246, guid: 57d70446c8667aa4f8cef4692ca3412f,
         type: 3}
       propertyPath: m_Name
@@ -25114,6 +25119,11 @@ PrefabInstance:
       propertyPath: btnJump
       value: 
       objectReference: {fileID: 1408274338}
+    - target: {fileID: 7541931113395033247, guid: 57d70446c8667aa4f8cef4692ca3412f,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7541931113469145552, guid: 57d70446c8667aa4f8cef4692ca3412f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25177,6 +25187,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1130811779}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1188177731 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7541931113395033247, guid: 57d70446c8667aa4f8cef4692ca3412f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1130811779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28d84eaf4e82026488d52d3998d5f155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1196041193
 GameObject:
   m_ObjectHideFlags: 0
@@ -25895,7 +25917,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1408274339}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1188177731}
+        m_MethodName: JumpButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1408274339
 MonoBehaviour:
   m_ObjectHideFlags: 0
