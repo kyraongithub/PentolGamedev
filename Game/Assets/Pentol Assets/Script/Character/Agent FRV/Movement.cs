@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.Networking;
+
 
 public class Movement : MonoBehaviour
 {
@@ -13,9 +17,11 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         animator.SetBool("jump", true);
     }
+
     void Update()
     {   // player move
         Vector3 characterScale = transform.localScale;
@@ -59,17 +65,27 @@ public class Movement : MonoBehaviour
         if (other.gameObject.CompareTag("Boots"))
         {
             Destroy(other.gameObject);
+             speed = 14f;
+             GetComponent<SpriteRenderer>().color = Color.green;
+             StartCoroutine(ResetSpeed());
         }
         if (other.gameObject.CompareTag("Energy"))
         {
             Destroy(other.gameObject);
+             GetComponent<SpriteRenderer>().color = Color.blue;
+             StartCoroutine(ResetSpeed());
+           
         }
         if (other.gameObject.CompareTag("Health"))
         {
             Destroy(other.gameObject);
         }
+         if (other.gameObject.CompareTag("Object"))
+        {
+            Destroy(other.gameObject);
+        }
+        
     }
-
 
     public void JumpButton()
     {
@@ -81,5 +97,11 @@ public class Movement : MonoBehaviour
             jumpCount++;
         }
     }
-
-}
+    private IEnumerator ResetSpeed()
+    {
+        yield return new WaitForSeconds(10);
+        speed = 10f;
+        GetComponent<SpriteRenderer>().color = Color.white;
+        
+    }
+ }

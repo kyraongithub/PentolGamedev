@@ -8,6 +8,7 @@ TagManager:
   - Boots
   - Energy
   - Health
+  - Object
   layers:
   - Default
   - TransparentFX
