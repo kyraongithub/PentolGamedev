@@ -14,10 +14,11 @@ public class Movement : MonoBehaviour
     public float jumpSpeed = 10.0f;
     public Animator animator;
     public int jumpCount = 0;
+    public AudioSource coinSource;
+    public AudioSource powerUp;
 
     void Start()
     {
-
         rb = GetComponent<Rigidbody2D>();
         animator.SetBool("jump", true);
     }
@@ -27,6 +28,11 @@ public class Movement : MonoBehaviour
         Vector3 characterScale = transform.localScale;
         // using wasd/key
         player.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, 0f);
+        // jump using space
+        if (Input.GetKeyDown("space"))
+        {
+            JumpButton();
+        }
         // using joystick
         if (fixedJoystick.Horizontal > 0 || Input.GetAxis("Horizontal") > 0)
         {
@@ -61,6 +67,7 @@ public class Movement : MonoBehaviour
         if (other.gameObject.CompareTag("Coins"))
         {
             Destroy(other.gameObject);
+            coinSource.Play();
         }
         if (other.gameObject.CompareTag("Boots"))
         {
@@ -68,21 +75,25 @@ public class Movement : MonoBehaviour
              speed = 14f;
              GetComponent<SpriteRenderer>().color = Color.green;
              StartCoroutine(ResetSpeed());
+             powerUp.Play();
         }
         if (other.gameObject.CompareTag("Energy"))
         {
             Destroy(other.gameObject);
              GetComponent<SpriteRenderer>().color = Color.blue;
              StartCoroutine(ResetSpeed());
-           
+            powerUp.Play();
+
         }
         if (other.gameObject.CompareTag("Health"))
         {
             Destroy(other.gameObject);
+            powerUp.Play();
         }
          if (other.gameObject.CompareTag("Object"))
         {
             Destroy(other.gameObject);
+            powerUp.Play();
         }
         
     }

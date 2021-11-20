@@ -9,6 +9,8 @@ TagManager:
   - Energy
   - Health
   - Object
+  - music
+  - sfx
   layers:
   - Default
   - TransparentFX

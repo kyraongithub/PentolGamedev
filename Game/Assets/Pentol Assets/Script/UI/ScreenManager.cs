@@ -3,13 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class ScreenManager : MonoBehaviour
 {
-    private Canvas setting;
-    private bool showSetting = false;
-  public void LoadScene(string sceneName)
+    public Canvas setting;
+    public bool showSetting = false;
+    public void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }
-
     public void settingModal()
     {
         if (!showSetting)
