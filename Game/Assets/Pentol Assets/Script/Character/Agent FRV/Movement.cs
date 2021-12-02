@@ -69,20 +69,7 @@ public class Movement : MonoBehaviour
         if (other.gameObject.CompareTag("Coins"))
         {
             Destroy(other.gameObject);
-<<<<<<< HEAD
             coinSource.Play(); //play audio
-=======
-            coinSource.Play();
-            if (PlayerPrefs.HasKey("coins"))
-            {
-                int coins = PlayerPrefs.GetInt("coins");
-                PlayerPrefs.SetInt("coins", coins + 1);
-            }
-            else
-            {
-                PlayerPrefs.SetInt("coins", 1);
-            }
->>>>>>> afd88ab331489a05635b061ef2bccc5bb69e3f35
         }
         if (other.gameObject.CompareTag("Boots"))
         {
