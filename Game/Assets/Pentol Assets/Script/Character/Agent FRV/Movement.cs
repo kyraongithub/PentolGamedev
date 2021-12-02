@@ -70,6 +70,16 @@ public class Movement : MonoBehaviour
         {
             Destroy(other.gameObject);
             coinSource.Play(); //play audio
+            // add coins
+            if (PlayerPrefs.HasKey("coins"))
+            {
+                int coins = PlayerPrefs.GetInt("coins");
+                PlayerPrefs.SetInt("coins", coins + 1);
+            }
+            else
+            {
+                PlayerPrefs.SetInt("coins", 1);
+            }
         }
         if (other.gameObject.CompareTag("Boots"))
         {
