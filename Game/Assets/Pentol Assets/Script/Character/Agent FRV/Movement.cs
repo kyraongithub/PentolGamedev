@@ -16,11 +16,13 @@ public class Movement : MonoBehaviour
     public int jumpCount = 0;
     public AudioSource coinSource;
     public AudioSource powerUp;
+    public Text buffCount;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator.SetBool("jump", true);
+        buffCount.enabled = false;
     }
 
     void Update()
@@ -67,7 +69,7 @@ public class Movement : MonoBehaviour
         if (other.gameObject.CompareTag("Coins"))
         {
             Destroy(other.gameObject);
-            coinSource.Play();
+            coinSource.Play(); //play audio
         }
         if (other.gameObject.CompareTag("Boots"))
         {
@@ -75,25 +77,29 @@ public class Movement : MonoBehaviour
              speed = 14f;
              GetComponent<SpriteRenderer>().color = Color.green;
              StartCoroutine(ResetSpeed());
-             powerUp.Play();
+             powerUp.Play(); //play audio
+            //countdown buff
+            buffCount.enabled = true;
         }
         if (other.gameObject.CompareTag("Energy"))
         {
             Destroy(other.gameObject);
              GetComponent<SpriteRenderer>().color = Color.blue;
              StartCoroutine(ResetSpeed());
-            powerUp.Play();
+            powerUp.Play(); //play audio
+            //countdown buff
+            buffCount.enabled = true;
 
         }
         if (other.gameObject.CompareTag("Health"))
         {
             Destroy(other.gameObject);
-            powerUp.Play();
+            powerUp.Play(); //play audio
         }
          if (other.gameObject.CompareTag("Object"))
         {
             Destroy(other.gameObject);
-            powerUp.Play();
+            powerUp.Play(); //play audio
         }
         
     }
