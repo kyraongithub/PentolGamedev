@@ -5,17 +5,7 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-
-    // play bgm
-    void Awake()
-    {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("music");
-        if (objs.Length > 1)
-            Destroy(this.gameObject);
-
-        DontDestroyOnLoad(this.gameObject);
-    }
-
+    // setting sound on off
     [SerializeField] Text soundOn;
     [SerializeField] Text soundOff;
     public bool muted = false;
@@ -33,6 +23,7 @@ public class AudioManager : MonoBehaviour
         }
         UpdateUIButton();
         AudioListener.pause = muted;
+        
     }
     public void OnButtonPress()
     {
