@@ -13358,7 +13358,7 @@ GameObject:
   - component: {fileID: 990327652}
   - component: {fileID: 990327651}
   m_Layer: 5
-  m_Name: buffCount
+  m_Name: buffSpeedCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13378,9 +13378,9 @@ RectTransform:
   m_Father: {fileID: 2028268840}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0.5, y: -121}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 72.3, y: -358}
   m_SizeDelta: {x: 106.5296, y: 78.93118}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &990327651
@@ -13414,7 +13414,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10
+  m_Text: 5
 --- !u!222 &990327652
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15495,6 +15495,83 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1520552497}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1538107932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538107935}
+  - component: {fileID: 1538107934}
+  - component: {fileID: 1538107933}
+  m_Layer: 5
+  m_Name: buffPowerCount
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1538107933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538107932}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.7812449, b: 0.9019608, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: edf1b349aaab39844a9ba75134f4241a, type: 3}
+    m_FontSize: 80
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 140
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 5
+--- !u!222 &1538107934
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538107932}
+  m_CullTransparentMesh: 0
+--- !u!224 &1538107935
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538107932}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2028268840}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 73, y: -257}
+  m_SizeDelta: {x: 106.5296, y: 78.93118}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1554733233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6777318824958116597, guid: 19a947f33bc53dc418d53a02199fdf04,
@@ -16811,6 +16888,7 @@ RectTransform:
   - {fileID: 1748338611}
   - {fileID: 1135317710}
   - {fileID: 990327650}
+  - {fileID: 1538107935}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17384,7 +17462,7 @@ PrefabInstance:
         type: 3}
       propertyPath: buffCount
       value: 
-      objectReference: {fileID: 990327651}
+      objectReference: {fileID: 990327649}
     - target: {fileID: 7541931113395033247, guid: 57d70446c8667aa4f8cef4692ca3412f,
         type: 3}
       propertyPath: m_Enabled
@@ -17395,6 +17473,16 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 7541931115020595117}
+    - target: {fileID: 7541931113395033247, guid: 57d70446c8667aa4f8cef4692ca3412f,
+        type: 3}
+      propertyPath: buffSpeedCount
+      value: 
+      objectReference: {fileID: 990327649}
+    - target: {fileID: 7541931113395033247, guid: 57d70446c8667aa4f8cef4692ca3412f,
+        type: 3}
+      propertyPath: buffPowerCount
+      value: 
+      objectReference: {fileID: 1538107932}
     - target: {fileID: 7541931113469145552, guid: 57d70446c8667aa4f8cef4692ca3412f,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -16,13 +16,19 @@ public class Movement : MonoBehaviour
     public int jumpCount = 0;
     public AudioSource coinSource;
     public AudioSource powerUp;
-    public Text buffCount;
+    public GameObject buffSpeedCount;
+    public GameObject buffPowerCount;
+    public int speedSecondsLeft = 5;
+    public int powerSecondsLeft = 5;
+    public int speedBuffTaken = 0;
+    public int powerBuffTaken = 0;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator.SetBool("jump", true);
-        buffCount.enabled = false;
+        buffSpeedCount.GetComponent<Text>().enabled = false;
+        buffPowerCount.GetComponent<Text>().enabled = false;
     }
 
     void Update()
@@ -83,22 +89,30 @@ public class Movement : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Boots"))
         {
-            Destroy(other.gameObject);
-             speed = 14f;
-             GetComponent<SpriteRenderer>().color = Color.green;
-             StartCoroutine(ResetSpeed());
-             powerUp.Play(); //play audio
-            //countdown buff
-            buffCount.enabled = true;
+            speedBuffTaken += 1;
+            if(speedBuffTaken < 2)
+            {
+                Destroy(other.gameObject);
+                speed = 14f;
+                GetComponent<SpriteRenderer>().color = Color.green;
+                StartCoroutine(ResetSpeed());
+                powerUp.Play(); //play audio
+                //countdown buff
+                buffSpeedCount.GetComponent<Text>().enabled = true;
+            }
         }
         if (other.gameObject.CompareTag("Energy"))
         {
-            Destroy(other.gameObject);
-             GetComponent<SpriteRenderer>().color = Color.blue;
-             StartCoroutine(ResetSpeed());
-            powerUp.Play(); //play audio
-            //countdown buff
-            buffCount.enabled = true;
+            powerBuffTaken += 1;
+            if (powerBuffTaken < 2)
+            {
+                Destroy(other.gameObject);
+                GetComponent<SpriteRenderer>().color = Color.blue;
+                StartCoroutine(ResetPower());
+                powerUp.Play(); //play audio
+                //countdown buff
+                buffPowerCount.GetComponent<Text>().enabled = true;
+            }
 
         }
         if (other.gameObject.CompareTag("Health"))
@@ -118,7 +132,6 @@ public class Movement : MonoBehaviour
     {
         if (jumpCount < 2)
         {
-
             rb.velocity = Vector2.up * jumpSpeed;
             animator.SetBool("jump", true);
             jumpCount++;
@@ -126,9 +139,38 @@ public class Movement : MonoBehaviour
     }
     private IEnumerator ResetSpeed()
     {
-        yield return new WaitForSeconds(10);
-        speed = 10f;
-        GetComponent<SpriteRenderer>().color = Color.white;
-        
+        speedSecondsLeft = 5;
+        buffSpeedCount.GetComponent<Text>().text = speedSecondsLeft.ToString();
+        while (speedSecondsLeft > 0)
+        {
+            yield return new WaitForSeconds(1);
+            speedSecondsLeft -= 1;
+            buffSpeedCount.GetComponent<Text>().text = speedSecondsLeft.ToString();
+        }
+        if (speedSecondsLeft == 0)
+        {
+            speed = 10f;
+            GetComponent<SpriteRenderer>().color = Color.white;
+            buffSpeedCount.GetComponent<Text>().enabled = false;
+            speedBuffTaken = 0;
+        }
     }
- }
+    private IEnumerator ResetPower()
+    {
+        powerSecondsLeft = 5;
+        buffSpeedCount.GetComponent<Text>().text = powerSecondsLeft.ToString();
+        while (powerSecondsLeft > 0)
+        {
+            yield return new WaitForSeconds(1);
+            powerSecondsLeft -= 1;
+            buffPowerCount.GetComponent<Text>().text = powerSecondsLeft.ToString();
+        }
+        if (powerSecondsLeft == 0)
+        {
+            speed = 10f;
+            GetComponent<SpriteRenderer>().color = Color.white;
+            buffPowerCount.GetComponent<Text>().enabled = false;
+            powerBuffTaken = 0;
+        }
+    }
+}
