@@ -158,7 +158,7 @@ public class Movement : MonoBehaviour
     private IEnumerator ResetPower()
     {
         powerSecondsLeft = 5;
-        buffSpeedCount.GetComponent<Text>().text = powerSecondsLeft.ToString();
+        buffPowerCount.GetComponent<Text>().text = powerSecondsLeft.ToString();
         while (powerSecondsLeft > 0)
         {
             yield return new WaitForSeconds(1);
