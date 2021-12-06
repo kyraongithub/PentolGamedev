@@ -10,10 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6009192629490214822}
   - component: {fileID: 6009192629490214823}
-  - component: {fileID: 6009192629490214824}
   - component: {fileID: 6009192629490214825}
   - component: {fileID: 6009192629490214820}
   - component: {fileID: 6009192629490214821}
+  - component: {fileID: 8833585537002648276}
+  - component: {fileID: 5538384314910132193}
   m_Layer: 0
   m_Name: guardian close
   m_TagString: Untagged
@@ -83,22 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6009192629490214824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6009192629490214826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5a33f1898557084b8b11a361712f9c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  agroRange: 10
-  moveSpeed: 5
-  animator: {fileID: 6009192629490214825}
 --- !u!95 &6009192629490214825
 Animator:
   serializedVersion: 3
@@ -131,7 +116,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.04, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -165,3 +150,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8833585537002648276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009192629490214826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca57170539816c04e895dd80c43ec6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+--- !u!114 &5538384314910132193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009192629490214826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c49278fc6995d4eb13bcf52ab81885, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackCooldown: 1
+  range: 1
+  damage: 1
+  colliderDistance: 6
+  boxCollider: {fileID: 6009192629490214820}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 1
