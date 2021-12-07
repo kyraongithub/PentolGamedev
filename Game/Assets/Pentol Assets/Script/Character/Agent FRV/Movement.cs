@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.Networking;
-
 
 public class Movement : MonoBehaviour
 {
@@ -22,6 +19,15 @@ public class Movement : MonoBehaviour
     public int powerSecondsLeft = 5;
     public int speedBuffTaken = 0;
     public int powerBuffTaken = 0;
+
+    public bool isInvicible = false;
+    
+    public GameObject bullet;
+    public bool isFacingRight = true;
+    public float fireRate = 0.2f;
+    float timeUntillFire;
+    float angle;
+    public Transform firingPoint;
 
     void Start()
     {
@@ -48,6 +54,7 @@ public class Movement : MonoBehaviour
             characterScale.x = 2;
             animator.SetBool("walk", true);
             animator.SetBool("jump", false);
+            isFacingRight = true;
         }
         else if (fixedJoystick.Horizontal < 0 || Input.GetAxis("Horizontal") < 0)
         {
@@ -55,6 +62,7 @@ public class Movement : MonoBehaviour
             characterScale.x = -2;
             animator.SetBool("walk", true);
             animator.SetBool("jump", false);
+            isFacingRight = false;
         }
         else
         {
@@ -107,7 +115,8 @@ public class Movement : MonoBehaviour
             if (powerBuffTaken < 2)
             {
                 Destroy(other.gameObject);
-                GetComponent<SpriteRenderer>().color = Color.blue;
+                GetComponent<SpriteRenderer>().color = Color.gray;
+                isInvicible = true;
                 StartCoroutine(ResetPower());
                 powerUp.Play(); //play audio
                 //countdown buff
@@ -152,13 +161,13 @@ public class Movement : MonoBehaviour
             speed = 10f;
             GetComponent<SpriteRenderer>().color = Color.white;
             buffSpeedCount.GetComponent<Text>().enabled = false;
-            speedBuffTaken = 0;
+           speedBuffTaken = 0;
         }
     }
     private IEnumerator ResetPower()
     {
         powerSecondsLeft = 5;
-        buffSpeedCount.GetComponent<Text>().text = powerSecondsLeft.ToString();
+        buffPowerCount.GetComponent<Text>().text = powerSecondsLeft.ToString();
         while (powerSecondsLeft > 0)
         {
             yield return new WaitForSeconds(1);
@@ -167,10 +176,21 @@ public class Movement : MonoBehaviour
         }
         if (powerSecondsLeft == 0)
         {
-            speed = 10f;
+            isInvicible = false;
             GetComponent<SpriteRenderer>().color = Color.white;
             buffPowerCount.GetComponent<Text>().enabled = false;
             powerBuffTaken = 0;
         }
     }
+    public void Fire()
+    {
+        if (timeUntillFire < Time.time)
+        {
+            angle = isFacingRight ? 0f : 180f;
+            Instantiate(bullet, firingPoint.position, Quaternion.Euler(new Vector3(0f, 0f, angle)));
+            timeUntillFire = Time.time + fireRate;
+        }
+    }
 }
+
+

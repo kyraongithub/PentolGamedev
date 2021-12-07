@@ -6,7 +6,11 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
-
+    Movement mv;
+    private void Start()
+    {
+        mv = gameObject.GetComponent<Movement>();
+    }
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -14,22 +18,25 @@ public class Health : MonoBehaviour
     }
     public void TakeDamage(float _damage)
     {
-        currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
-
-        if (currentHealth > 0)
+        if (!mv.isInvicible)
         {
-            anim.SetTrigger("hurt");
-            //iframes
-        }
-        else
-        {
-            if (!dead)
+            currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+            if (currentHealth > 0)
             {
-                anim.SetTrigger("die");
-                GetComponent<Movement>().enabled = false;
-                dead = true;
+                anim.SetTrigger("hurt");
+                //iframes
+            }
+            else
+            {
+                if (!dead)
+                {
+                    anim.SetTrigger("die");
+                    GetComponent<Movement>().enabled = false;
+                    dead = true;
+                }
             }
         }
+
     }
     public void AddHealth(float _value)
     {

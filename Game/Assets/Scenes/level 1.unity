@@ -310,6 +310,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1073842626}
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &74751970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12756,7 +12767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851075644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4100004, y: 16.41, z: -14}
+  m_LocalPosition: {x: -1.4100007, y: 16.41, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1456383743}
@@ -15796,21 +15807,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 845660966}
     m_Modifications:
-    - target: {fileID: 5538384314910132193, guid: 85487a969d8d0e04f944487baf7cb582,
-        type: 3}
-      propertyPath: playerLayer.m_Bits
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5538384314910132193, guid: 85487a969d8d0e04f944487baf7cb582,
-        type: 3}
-      propertyPath: colliderDistance
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6009192629490214820, guid: 85487a969d8d0e04f944487baf7cb582,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6009192629490214822, guid: 85487a969d8d0e04f944487baf7cb582,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15866,11 +15862,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6009192629490214824, guid: 85487a969d8d0e04f944487baf7cb582,
-        type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 1838145148}
     - target: {fileID: 6009192629490214826, guid: 85487a969d8d0e04f944487baf7cb582,
         type: 3}
       propertyPath: m_Name
@@ -16223,6 +16214,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1795915821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 770148369, guid: 57d70446c8667aa4f8cef4692ca3412f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7541931115020595116}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1795915822 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 770148370, guid: 57d70446c8667aa4f8cef4692ca3412f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7541931115020595116}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1799222465
 GameObject:
   m_ObjectHideFlags: 0
@@ -17116,7 +17119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094238729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4100004, y: 16.41, z: -14}
+  m_LocalPosition: {x: -1.4100007, y: 16.41, z: -14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -17438,6 +17441,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: shootBtn
+      value: 
+      objectReference: {fileID: 74751969}
+    - target: {fileID: 0}
+      propertyPath: shootAudio
+      value: 
+      objectReference: {fileID: 2091922501}
+    - target: {fileID: 770148370, guid: 57d70446c8667aa4f8cef4692ca3412f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7541931113395033241, guid: 57d70446c8667aa4f8cef4692ca3412f,
         type: 3}
       propertyPath: m_UsedByEffector
@@ -17513,6 +17528,32 @@ PrefabInstance:
       propertyPath: buffPowerCount
       value: 
       objectReference: {fileID: 1538107932}
+    - target: {fileID: 7541931113395033247, guid: 57d70446c8667aa4f8cef4692ca3412f,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 1163980202750998575, guid: 2f74e260f8becb842a31d839f2418df7,
+        type: 3}
+    - target: {fileID: 7541931113395033247, guid: 57d70446c8667aa4f8cef4692ca3412f,
+        type: 3}
+      propertyPath: ShootPos
+      value: 
+      objectReference: {fileID: 1795915821}
+    - target: {fileID: 7541931113395033247, guid: 57d70446c8667aa4f8cef4692ca3412f,
+        type: 3}
+      propertyPath: btnShot
+      value: 
+      objectReference: {fileID: 74751969}
+    - target: {fileID: 7541931113395033247, guid: 57d70446c8667aa4f8cef4692ca3412f,
+        type: 3}
+      propertyPath: shot
+      value: 
+      objectReference: {fileID: 2091922501}
+    - target: {fileID: 7541931113395033247, guid: 57d70446c8667aa4f8cef4692ca3412f,
+        type: 3}
+      propertyPath: firingPoint
+      value: 
+      objectReference: {fileID: 1795915822}
     - target: {fileID: 7541931113469145552, guid: 57d70446c8667aa4f8cef4692ca3412f,
         type: 3}
       propertyPath: m_LocalPosition.x

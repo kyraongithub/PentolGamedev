@@ -11,6 +11,8 @@ TagManager:
   - Object
   - music
   - sfx
+  - bullet
+  - enemy
   layers:
   - Default
   - TransparentFX
