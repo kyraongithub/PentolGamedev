@@ -22,8 +22,11 @@ public class bullet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D target)
     {
-        // destroy bullet
-        Destroy(gameObject);
+        if(target.gameObject.tag != "Player")
+        {
+            // destroy bullet
+            Destroy(gameObject);
+        }
         // destroy enemy      
         if (target.gameObject.tag == "enemy")
         {

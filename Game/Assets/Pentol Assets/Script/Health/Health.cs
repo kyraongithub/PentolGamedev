@@ -33,6 +33,8 @@ public class Health : MonoBehaviour
                     anim.SetTrigger("die");
                     GetComponent<Movement>().enabled = false;
                     dead = true;
+                    // dead canvas
+
                 }
             }
         }

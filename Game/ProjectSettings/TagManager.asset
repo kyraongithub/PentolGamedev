@@ -13,6 +13,9 @@ TagManager:
   - sfx
   - bullet
   - enemy
+  - gate
+  - platform
+  - obstacle
   layers:
   - Default
   - TransparentFX

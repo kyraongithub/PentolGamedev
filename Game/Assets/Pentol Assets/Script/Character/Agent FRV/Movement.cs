@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -29,16 +30,20 @@ public class Movement : MonoBehaviour
     float angle;
     public Transform firingPoint;
 
+    ScreenManager sm;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator.SetBool("jump", true);
         buffSpeedCount.GetComponent<Text>().enabled = false;
         buffPowerCount.GetComponent<Text>().enabled = false;
+        sm = FindObjectOfType<ScreenManager>();
     }
 
     void Update()
-    {   // player move
+    {
+        // player move
         Vector3 characterScale = transform.localScale;
         // using wasd/key
         player.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0f, 0f);
@@ -133,6 +138,16 @@ public class Movement : MonoBehaviour
         {
             Destroy(other.gameObject);
             powerUp.Play(); //play audio
+        }
+        if (other.gameObject.CompareTag("gate"))
+        {
+            if(sm.getActiveSceneName() == "level 1")
+            {
+                sm.LoadScene("level 2");
+            } else if (sm.getActiveSceneName() == "level 2")
+            {
+                sm.LoadScene("level 3");
+            }
         }
         
     }

@@ -21,4 +21,8 @@ public class ScreenManager : MonoBehaviour
             setting.enabled = false;
         }
     }
+    public string getActiveSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
 }
