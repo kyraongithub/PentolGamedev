@@ -93,7 +93,7 @@ public class Movement : MonoBehaviour
         if (other.gameObject.CompareTag("Coins"))
         {
             other.gameObject.SetActive(false);
-            StartCoroutine(ItemSPawn(other.gameObject));
+            StartCoroutine(ItemSpawn(other.gameObject));
             //Destroy(other.gameObject);
             coinSource.Play(); //play audio
             // add coins
@@ -113,7 +113,7 @@ public class Movement : MonoBehaviour
             if(speedBuffTaken < 2)
             {
                 other.gameObject.SetActive(false);
-                StartCoroutine(ItemSPawn(other.gameObject));
+                StartCoroutine(ItemSpawn(other.gameObject));
                 speed = 14f;
                 GetComponent<SpriteRenderer>().color = Color.green;
                 StartCoroutine(ResetSpeed());
@@ -128,7 +128,7 @@ public class Movement : MonoBehaviour
             if (powerBuffTaken < 2)
             {
                 other.gameObject.SetActive(false);
-                StartCoroutine(ItemSPawn(other.gameObject));
+                StartCoroutine(ItemSpawn(other.gameObject));
                 GetComponent<SpriteRenderer>().color = Color.gray;
                 isInvicible = true;
                 StartCoroutine(ResetPower());
@@ -208,7 +208,7 @@ public class Movement : MonoBehaviour
             powerBuffTaken = 0;
         }
     }
-    private IEnumerator ItemSPawn(GameObject gameObject)
+    private IEnumerator ItemSpawn(GameObject gameObject)
     {
        yield return new WaitForSeconds(7);
         gameObject.SetActive(true);
