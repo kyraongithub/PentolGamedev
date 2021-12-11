@@ -32,6 +32,8 @@ public class Movement : MonoBehaviour
 
     ScreenManager sm;
 
+    public GameObject gate;
+    public Text warn;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,6 +41,8 @@ public class Movement : MonoBehaviour
         buffSpeedCount.GetComponent<Text>().enabled = false;
         buffPowerCount.GetComponent<Text>().enabled = false;
         sm = FindObjectOfType<ScreenManager>();
+        gate.SetActive(false);
+        warn.enabled = false;
     }
 
     void Update()
@@ -70,6 +74,7 @@ public class Movement : MonoBehaviour
             isFacingRight = false;
         }
         else
+
         {
             animator.SetBool("walk", false);
         }
@@ -137,6 +142,8 @@ public class Movement : MonoBehaviour
          if (other.gameObject.CompareTag("Object"))
         {
             Destroy(other.gameObject);
+            warn.enabled = true;
+            gate.SetActive(enabled); //enable gate
             powerUp.Play(); //play audio
         }
         if (other.gameObject.CompareTag("gate"))

@@ -10,7 +10,6 @@ public class blades : MonoBehaviour
     void Start()
     {
         hlt = FindObjectOfType<Health>();
-        print(hlt);
     }
 
     // Update is called once per frame

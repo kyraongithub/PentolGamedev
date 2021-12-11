@@ -9,6 +9,10 @@ public class ScreenManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void LoadActiveScene()
+    {
+        SceneManager.LoadScene(getActiveSceneName());
+    }
     public void settingModal()
     {
         if (!showSetting)

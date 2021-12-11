@@ -7,9 +7,14 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool dead;
     Movement mv;
+    public Canvas deadCanvas;
+    public AudioSource getHit;
+    public AudioSource deadSFX;
+    public AudioSource looseSFX;
     private void Start()
     {
         mv = gameObject.GetComponent<Movement>();
+        deadCanvas.enabled = false;
     }
     private void Awake()
     {
@@ -24,6 +29,7 @@ public class Health : MonoBehaviour
             if (currentHealth > 0)
             {
                 anim.SetTrigger("hurt");
+                getHit.Play();
                 //iframes
             }
             else
@@ -34,7 +40,9 @@ public class Health : MonoBehaviour
                     GetComponent<Movement>().enabled = false;
                     dead = true;
                     // dead canvas
-
+                    deadCanvas.enabled = true;
+                    deadSFX.Play();
+                    looseSFX.Play();
                 }
             }
         }

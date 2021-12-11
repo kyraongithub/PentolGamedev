@@ -163,6 +163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  deadCanvas: {fileID: 0}
+  getHit: {fileID: 0}
+  deadSFX: {fileID: 0}
+  looseSFX: {fileID: 0}
 --- !u!114 &5538384314910132193
 MonoBehaviour:
   m_ObjectHideFlags: 0
