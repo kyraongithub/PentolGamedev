@@ -92,7 +92,9 @@ public class Movement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Coins"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
+            StartCoroutine(ItemSPawn(other.gameObject));
+            //Destroy(other.gameObject);
             coinSource.Play(); //play audio
             // add coins
             if (PlayerPrefs.HasKey("coins"))
@@ -110,7 +112,8 @@ public class Movement : MonoBehaviour
             speedBuffTaken += 1;
             if(speedBuffTaken < 2)
             {
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
+                StartCoroutine(ItemSPawn(other.gameObject));
                 speed = 14f;
                 GetComponent<SpriteRenderer>().color = Color.green;
                 StartCoroutine(ResetSpeed());
@@ -124,7 +127,8 @@ public class Movement : MonoBehaviour
             powerBuffTaken += 1;
             if (powerBuffTaken < 2)
             {
-                Destroy(other.gameObject);
+                other.gameObject.SetActive(false);
+                StartCoroutine(ItemSPawn(other.gameObject));
                 GetComponent<SpriteRenderer>().color = Color.gray;
                 isInvicible = true;
                 StartCoroutine(ResetPower());
@@ -203,6 +207,11 @@ public class Movement : MonoBehaviour
             buffPowerCount.GetComponent<Text>().enabled = false;
             powerBuffTaken = 0;
         }
+    }
+    private IEnumerator ItemSPawn(GameObject gameObject)
+    {
+       yield return new WaitForSeconds(7);
+        gameObject.SetActive(true);
     }
     public void Fire()
     {
