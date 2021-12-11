@@ -140,7 +140,8 @@ public class Movement : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Health"))
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
+            StartCoroutine(ItemSpawn(other.gameObject));
             powerUp.Play(); //play audio
         }
          if (other.gameObject.CompareTag("Object"))

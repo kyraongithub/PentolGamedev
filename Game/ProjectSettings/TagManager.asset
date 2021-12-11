@@ -16,6 +16,7 @@ TagManager:
   - gate
   - platform
   - obstacle
+  - bottom
   layers:
   - Default
   - TransparentFX
