@@ -43,6 +43,14 @@ public class Health : MonoBehaviour
                     deadCanvas.enabled = true;
                     deadSFX.Play();
                     looseSFX.Play();
+
+                    //enemy
+                    if(GetComponentInParent<EnemyPatrol>() != null)
+                    GetComponentInParent<EnemyPatrol>().enabled = false;
+                    if(GetComponent<MeleeEnemy>() != null)
+                    GetComponent<MeleeEnemy>().enabled = false;
+                    dead = true;
+
                 }
             }
         }
