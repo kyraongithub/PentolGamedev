@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 6009192629490214825}
   - component: {fileID: 6009192629490214820}
   - component: {fileID: 6009192629490214821}
-  - component: {fileID: 8833585537002648276}
   - component: {fileID: 5538384314910132193}
+  - component: {fileID: 1192822445}
   m_Layer: 0
   m_Name: guardian close
   m_TagString: enemy
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 6009192629490214826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 48.17, y: 15.86, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.30000007, y: 0.3, z: 0.30000007}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -116,7 +116,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04, y: -0.5}
+  m_Offset: {x: -0.26, y: -0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -127,7 +127,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.42, y: 11.98}
+  m_Size: {x: 4.55, y: 11.98}
   m_EdgeRadius: 0
 --- !u!50 &6009192629490214821
 Rigidbody2D:
@@ -150,23 +150,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8833585537002648276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6009192629490214826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca57170539816c04e895dd80c43ec6ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 3
-  deadCanvas: {fileID: 0}
-  getHit: {fileID: 0}
-  deadSFX: {fileID: 0}
-  looseSFX: {fileID: 0}
 --- !u!114 &5538384314910132193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,11 +162,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6c49278fc6995d4eb13bcf52ab81885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 1
+  attackCooldown: 2
   range: 1
   damage: 1
-  colliderDistance: 6
+  colliderDistance: 4.97
   boxCollider: {fileID: 6009192629490214820}
   playerLayer:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &1192822445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6009192629490214826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a564f9f72f71e0f4a90ad4ed28da2757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+  enemy: {fileID: 0}

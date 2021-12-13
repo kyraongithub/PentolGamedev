@@ -7,10 +7,12 @@ public class bullet : MonoBehaviour
     int lifetime = 1;
     float timer;
     public Rigidbody2D rbBullet;
+    enemyhealth eh;
 
     private void FixedUpdate()
     { 
      rbBullet.velocity = transform.right * bulletSpeed;
+        eh = FindObjectOfType<enemyhealth>();
     }
     void Update()
     {
@@ -30,7 +32,7 @@ public class bullet : MonoBehaviour
         // destroy enemy      
         if (target.gameObject.tag == "enemy")
         {
-            Destroy(target.gameObject);
+            eh.TakeDamage(1f);
         }
     }
 }
