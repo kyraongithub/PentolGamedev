@@ -11282,6 +11282,11 @@ PrefabInstance:
       propertyPath: deadCanvas
       value: 
       objectReference: {fileID: 1005119453}
+    - target: {fileID: 114429031038870316, guid: 57d70446c8667aa4f8cef4692ca3412f,
+        type: 3}
+      propertyPath: startingHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7541931113395033246, guid: 57d70446c8667aa4f8cef4692ca3412f,
         type: 3}
       propertyPath: m_Name
