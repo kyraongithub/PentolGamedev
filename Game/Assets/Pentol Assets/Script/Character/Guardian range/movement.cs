@@ -15,9 +15,7 @@ public class movement : MonoBehaviour
     }
 
     void Update(){
-        if(re.RangedAttack == true){
-            Fire();
-        }
+        
     }
 
     public void Fire()

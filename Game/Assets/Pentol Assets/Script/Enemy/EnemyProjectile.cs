@@ -58,8 +58,7 @@ public class EnemyProjectile : EnemyDamage
         if (Mathf.Sign(localScaleX) != _direction)
             localScaleX = -localScaleX;
 
-        //transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
-        Instantiate(bullet, firingPoint.position, Quaternion.Euler(new Vector3(0f, 0f, 0f)));
+        transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
 
     private void Deactivate()

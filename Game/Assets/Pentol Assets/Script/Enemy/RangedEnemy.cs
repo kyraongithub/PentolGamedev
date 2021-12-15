@@ -26,17 +26,16 @@ public class RangedEnemy : MonoBehaviour
 
 
     public GameObject bullet;
-    public bool isFacingRight = true;
     public float fireRate = 0.2f;
     float timeUntillFire;
-    float angle;
     public Transform firingPoint;
+    float angle;
+    
 
     private void Awake()
     {
         anim = GetComponent<Animator>();
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
-        isFacingRight = gameObject.transform.position > 1? true : false;
     }
 
     private void Update()
@@ -61,13 +60,10 @@ public class RangedEnemy : MonoBehaviour
     {
         if (timeUntillFire < Time.time)
         {
-            angle = isFacingRight ? 0f : 180f;
+            angle = enemyPatrol.isFacingRight ? 0f : 180f;
             Instantiate(bullet, firingPoint.position, Quaternion.Euler(new Vector3(0f, 0f, angle)));
             timeUntillFire = Time.time + fireRate;
         }
-        //cooldownTimer = 0;
-        //fireballs[FindFireball()].transform.position = firepoint.position;
-        //fireballs[FindFireball()].GetComponent<EnemyProjectile>().ActivateProjectile();
     }
     private int FindFireball()
     {

@@ -20,7 +20,7 @@ public class EnemyPatrol : MonoBehaviour
 
     [Header("Enemy Animator")]
     [SerializeField] private Animator anim;
-
+    public bool isFacingRight = false;
     private void Awake()
     {
         initScale = enemy.localScale;
@@ -69,5 +69,12 @@ public class EnemyPatrol : MonoBehaviour
         //Move in that direction
         enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
             enemy.position.y, enemy.position.z);
+        if(_direction == 1)
+        {
+            isFacingRight = true;
+        } else
+        {
+            isFacingRight = false;
+        }
     }
 }

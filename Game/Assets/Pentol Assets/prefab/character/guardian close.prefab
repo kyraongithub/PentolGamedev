@@ -169,7 +169,7 @@ MonoBehaviour:
   boxCollider: {fileID: 6009192629490214820}
   playerLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 256
 --- !u!114 &1192822445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,4 +183,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
-  enemy: {fileID: 0}
