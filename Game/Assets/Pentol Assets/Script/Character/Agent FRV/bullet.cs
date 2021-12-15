@@ -3,10 +3,23 @@
 public class bullet : MonoBehaviour
 {
     public float bulletSpeed = 15f;
-    public int bulletDamage = 1;
+    float bulletDamage;
     int lifetime = 1;
     float timer;
     public Rigidbody2D rbBullet;
+
+    private void Start()
+    {
+        if (PlayerPrefs.HasKey("playerDamage"))
+        {
+            bulletDamage = PlayerPrefs.GetFloat("playerDamage");
+        }
+        else
+        {
+            bulletDamage = 1f;
+            PlayerPrefs.SetFloat("playerDamage", 1f);
+        }
+    }
 
     private void FixedUpdate()
     { 
@@ -30,7 +43,7 @@ public class bullet : MonoBehaviour
         // destroy enemy      
         if (target.gameObject.tag == "enemy")
         {
-            target.gameObject.GetComponent<enemyhealth>().TakeDamage(1f);
+            target.gameObject.GetComponent<enemyhealth>().TakeDamage(bulletDamage);
         }
     }
 }

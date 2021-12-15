@@ -18,14 +18,18 @@ public class Health : MonoBehaviour
     }
     private void Awake()
     {
-        currentHealth = startingHealth;
+        if (!PlayerPrefs.HasKey("playerHealth"))
+        {
+            PlayerPrefs.SetFloat("playerHealth", 3f);
+        }
+        currentHealth = PlayerPrefs.HasKey("playerHealth") ? PlayerPrefs.GetFloat("playerHealth") : startingHealth;
         anim = GetComponent<Animator>();
     }
     public void TakeDamage(float _damage)
     {
         if (!mv.isInvicible)
         {
-            currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+            currentHealth = Mathf.Clamp(currentHealth - _damage, 0, PlayerPrefs.HasKey("playerHealth") ? PlayerPrefs.GetFloat("playerHealth") : startingHealth);
             if (currentHealth > 0)
             {
                 anim.SetTrigger("hurt");
@@ -58,7 +62,7 @@ public class Health : MonoBehaviour
     }
     public void AddHealth(float _value)
     {
-        currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+        currentHealth = Mathf.Clamp(currentHealth + _value, 0, PlayerPrefs.HasKey("playerHealth") ? PlayerPrefs.GetFloat("playerHealth") : startingHealth);
     }
 
     public float getCurrentHealth()
