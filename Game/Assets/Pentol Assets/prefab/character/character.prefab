@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770148370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FiringPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 7541931113395033240}
   - component: {fileID: 7541931113395033247}
   - component: {fileID: 114429031038870316}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: character
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -208,7 +208,13 @@ MonoBehaviour:
   powerSecondsLeft: 5
   speedBuffTaken: 0
   powerBuffTaken: 0
+  isInvicible: 0
+  bullet: {fileID: 0}
   isFacingRight: 1
+  fireRate: 0.2
+  firingPoint: {fileID: 0}
+  gate: {fileID: 0}
+  warn: {fileID: 0}
 --- !u!114 &114429031038870316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,3 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  deadCanvas: {fileID: 0}
+  getHit: {fileID: 0}
+  deadSFX: {fileID: 0}
+  looseSFX: {fileID: 0}
