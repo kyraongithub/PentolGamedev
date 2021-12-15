@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -42,20 +43,6 @@ public class Movement : MonoBehaviour
         sm = FindObjectOfType<ScreenManager>();
         gate.SetActive(false);
         warn.enabled = false;
-
-        //if player invicible start
-        if(PlayerPrefs.HasKey("isInvicibleStart"))
-        {
-            powerBuffTaken += 1;
-            if (powerBuffTaken < 2)
-            {
-                GetComponent<SpriteRenderer>().color = Color.gray;
-                isInvicible = true;
-                StartCoroutine(ResetPower());
-                //countdown buff
-                buffPowerCount.GetComponent<Text>().enabled = true;
-            }
-        }
     }
 
     void Update()

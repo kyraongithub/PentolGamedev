@@ -2,65 +2,31 @@
 
 public class movement : MonoBehaviour
 {
-    [SerializeField]
-    Transform player;
+    public GameObject bullet;
+    public bool isFacingRight = true;
+    public float fireRate = 0.2f;
+    float timeUntillFire;
+    float angle;
+    public Transform firingPoint;
+    RangedEnemy re;
 
-    [SerializeField]
-    float agroRange;
-
-    [SerializeField]
-    float moveSpeed;
-
-    Rigidbody2D rb2d;
-    public Animator animator;
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb2d = GetComponent<Rigidbody2D>();
-        agroRange = 10;
+    void Start(){
+        re = FindObjectOfType<RangedEnemy>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        float distToPlayer = Vector2.Distance(transform.position, player.position);
-        //print("distance to player: " + distToPlayer);
-        if(distToPlayer < agroRange )
-        {
-            if (distToPlayer > 8)
-            {
-                // Chase
-                chasePlayer();
-                animator.SetBool("walk", true);
-            } else
-            {
-                // disini nanti attack
-                animator.SetBool("walk", false);
-            }
-        } else
-        {
-            // Stop chasing
-            stopChasePlayer();
-            animator.SetBool("walk", false);
+    void Update(){
+        if(re.RangedAttack == true){
+            Fire();
         }
     }
 
-    void chasePlayer()
+    public void Fire()
     {
-        if(transform.position.x < player.position.x)
+        if (timeUntillFire < Time.time)
         {
-            rb2d.velocity = new Vector2(moveSpeed, 0);
-            transform.localScale = new Vector2(0.3f, 0.3f);
+            angle = isFacingRight ? 0f : 180f;
+            Instantiate(bullet, firingPoint.position, Quaternion.Euler(new Vector3(0f, 0f, angle)));
+            timeUntillFire = Time.time + fireRate;
         }
-        else if (transform.position.x > player.position.x)
-        {
-            rb2d.velocity = new Vector2(-moveSpeed, 0);
-            transform.localScale = new Vector2(-0.3f, 0.3f);
-        }
-    }
-
-    void stopChasePlayer()
-    {
-        rb2d.velocity = new Vector2(0, 0);
     }
 }

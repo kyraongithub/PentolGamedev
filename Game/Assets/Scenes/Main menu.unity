@@ -2748,7 +2748,7 @@ GameObject:
   - component: {fileID: 1610353723}
   - component: {fileID: 1610353722}
   m_Layer: 5
-  m_Name: btnUpgrade
+  m_Name: btnCostume
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2821,7 +2821,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Upgrade
+          m_StringArgument: Costume
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 207283031}
@@ -2853,7 +2853,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8c33c74d42ed90a48b3e521cf998020d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbe54c8acb30766449f23197acfe1008, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
