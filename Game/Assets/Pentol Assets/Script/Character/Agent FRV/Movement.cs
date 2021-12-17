@@ -114,7 +114,10 @@ public class Movement : MonoBehaviour
             if (PlayerPrefs.HasKey("coins"))
             {
                 int coins = PlayerPrefs.GetInt("coins");
-                PlayerPrefs.SetInt("coins", coins + 1);
+                if (coins <= 9999)
+                {
+                    PlayerPrefs.SetInt("coins", coins + 1);
+                }
             }
             else
             {

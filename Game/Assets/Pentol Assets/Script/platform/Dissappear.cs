@@ -17,7 +17,7 @@ public class Dissappear : MonoBehaviour
     }
     private IEnumerator DissappearingPlatform()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         gameObject.SetActive(false);
     }
 }

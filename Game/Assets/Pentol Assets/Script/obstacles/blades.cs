@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class blades : MonoBehaviour
 {
-    public float rotateSpeed;
+    float rotateSpeed = 0.5f;
     Health hlt;
     // Start is called before the first frame update
     void Start()

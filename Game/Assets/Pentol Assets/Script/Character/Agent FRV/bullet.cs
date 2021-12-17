@@ -43,7 +43,13 @@ public class bullet : MonoBehaviour
         // destroy enemy      
         if (target.gameObject.tag == "enemy")
         {
-            target.gameObject.GetComponent<enemyhealth>().TakeDamage(bulletDamage);
+            if (target.gameObject.name == "boss X")
+            {
+                target.gameObject.GetComponent<bosshealth>().TakeDamage(bulletDamage);
+            } else
+            {
+                target.gameObject.GetComponent<enemyhealth>().TakeDamage(bulletDamage);
+            }
         }
     }
 }

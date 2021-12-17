@@ -15,11 +15,12 @@ public class upgrade : MonoBehaviour
         warn.enabled = false;
         //set coin for testing
         //PlayerPrefs.SetInt("coins", 10000);
+        //PlayerPrefs.DeleteKey("coins");
         // for reset
         /*
         PlayerPrefs.SetFloat("playerHealth", 3f);
         PlayerPrefs.SetFloat("playerDamage", 1f);
-        PlayerPrefs.SetString("isInvicibleStart", "false");
+        PlayerPrefs.DeleteKey("isInvicibleStart");
         print("reset done");
         */
     }

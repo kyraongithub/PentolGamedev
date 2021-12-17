@@ -18,7 +18,6 @@ GameObject:
   - component: {fileID: 3664354553647189712}
   - component: {fileID: 5749609776922651044}
   - component: {fileID: 8768124471907928953}
-  - component: {fileID: 8363137895688102891}
   m_Layer: 0
   m_Name: boss X
   m_TagString: enemy
@@ -264,16 +263,3 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &8363137895688102891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1440989685039367269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a564f9f72f71e0f4a90ad4ed28da2757, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 10
